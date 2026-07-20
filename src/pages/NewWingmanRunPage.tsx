@@ -172,12 +172,13 @@ export function NewWingmanRunPage() {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between">
+          <CardHeader className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
             <CardTitle>Recent messages</CardTitle>
             <Button
               type="button"
               variant="secondary"
               size="sm"
+              className="w-full sm:w-auto"
               onClick={() => append({ role: "recipient", text: "", sentAt: "" })}
             >
               <Plus size={16} />
@@ -186,9 +187,9 @@ export function NewWingmanRunPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             {fields.map((field, index) => (
-              <div key={field.id} className="rounded-2xl border border-border p-4 space-y-3">
-                <div className="flex gap-3 items-start">
-                  <div className="w-32 shrink-0 space-y-2">
+              <div key={field.id} className="space-y-3 rounded-2xl border border-border p-3 sm:p-4">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
+                  <div className="w-full shrink-0 space-y-2 sm:w-32">
                     <Label className="text-xs">Role</Label>
                     <Select
                       value={watch(`recentMessages.${index}.role`)}
@@ -214,7 +215,7 @@ export function NewWingmanRunPage() {
                       type="button"
                       variant="ghost"
                       size="icon"
-                      className="mt-6"
+                      className="self-end sm:mt-6"
                       onClick={() => remove(index)}
                     >
                       <Trash size={16} />
@@ -237,7 +238,7 @@ export function NewWingmanRunPage() {
 
         {error ? <p className="text-sm text-destructive">{error}</p> : null}
 
-        <Button type="submit" size="lg" disabled={isSubmitting}>
+        <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={isSubmitting}>
           {isSubmitting ? "Generating replies..." : "Generate Replies"}
         </Button>
       </form>

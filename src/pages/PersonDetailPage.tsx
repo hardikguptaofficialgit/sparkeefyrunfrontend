@@ -69,19 +69,19 @@ export function PersonDetailPage() {
 
   return (
     <div>
-      <div className="mb-8 flex items-start gap-4">
+      <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-start">
         <PersonAvatar personId={person.id} displayName={person.displayName} size="xl" />
-        <div className="min-w-0 flex-1 pt-1">
+        <div className="min-w-0 flex-1 sm:pt-1">
           <PageHeader
             title={person.displayName}
             description={person.relationshipLabel ?? "Relationship profile"}
             action={
-              <div className="flex gap-2">
-                <Button variant="secondary" onClick={startEdit}>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Button variant="secondary" onClick={startEdit} className="w-full sm:w-auto">
                   <PencilSimple size={16} />
                   Edit
                 </Button>
-                <Button asChild>
+                <Button asChild className="w-full sm:w-auto">
                   <Link to={`/people/${id}/memories`}>
                     <Brain size={16} />
                     Memories
@@ -149,9 +149,9 @@ export function PersonDetailPage() {
         </Card>
 
         <Card>
-          <CardHeader className="flex flex-row items-center justify-between">
+          <CardHeader className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <CardTitle>Recent Wingman Runs</CardTitle>
-            <Button size="sm" asChild>
+            <Button size="sm" asChild className="w-full sm:w-auto">
               <Link to={`/wingman/new?personId=${id}`}>
                 <ChatCircle size={16} />
                 New Run

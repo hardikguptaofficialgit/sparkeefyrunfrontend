@@ -24,7 +24,7 @@ export function WingmanRunDetailPage() {
 
   return (
     <div>
-      <div className="mb-8 flex items-start gap-4">
+      <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-start">
         <PersonAvatar
           personId={run.personSnapshot.id}
           displayName={run.personSnapshot.displayName}
@@ -53,7 +53,7 @@ export function WingmanRunDetailPage() {
         <div className="space-y-6">
           <section>
             <h2 className="text-lg font-semibold mb-4">Suggested Replies</h2>
-            <div className="grid gap-4 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {run.result.suggestedReplies.map((reply, index) => (
                 <Card key={index} className="h-full">
                     <CardHeader className="pb-2">

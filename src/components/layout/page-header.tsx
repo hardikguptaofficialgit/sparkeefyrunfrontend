@@ -17,10 +17,10 @@ export function PageHeader({
       initial={{ opacity: 0, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.18, ease: [0.4, 0, 0.2, 1] }}
-      className="mb-10 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"
+      className="mb-6 flex flex-col gap-4 sm:mb-10 sm:gap-5 lg:flex-row lg:items-end lg:justify-between"
     >
-      <div className="space-y-2.5">
-        <h1 className="font-display text-[1.75rem] sm:text-[2rem] font-semibold tracking-[-0.02em] text-balance leading-[1.15]">
+      <div className="min-w-0 space-y-2">
+        <h1 className="font-display text-[1.5rem] font-semibold leading-[1.15] tracking-[-0.02em] text-balance sm:text-[1.75rem] lg:text-[2rem]">
           {accent ? (
             <>
               <span className="font-accent italic text-primary">{accent}</span> {title}
@@ -35,7 +35,7 @@ export function PageHeader({
           </p>
         ) : null}
       </div>
-      {action}
+      {action ? <div className="w-full shrink-0 sm:w-auto [&_button]:w-full sm:[&_button]:w-auto">{action}</div> : null}
     </motion.div>
   );
 }

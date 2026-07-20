@@ -22,7 +22,7 @@ export function DashboardPage() {
   if (peopleLoading || runsLoading) return <LoadingState />;
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-6 sm:space-y-10">
       <PageHeader
         accent="Caring"
         title="shouldn't feel this hard"
@@ -37,7 +37,7 @@ export function DashboardPage() {
         }
       />
 
-      <div className="grid gap-3 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:grid-cols-3">
         <Card>
           <CardHeader className="pb-2">
             <CardDescription>People</CardDescription>
@@ -59,7 +59,7 @@ export function DashboardPage() {
             <p className="text-[13px] text-muted-foreground">Wingman sessions completed</p>
           </CardContent>
         </Card>
-        <Card>
+        <Card className="min-[420px]:col-span-2 sm:col-span-1">
           <CardHeader className="pb-2">
             <CardDescription>Success Rate</CardDescription>
             <CardTitle className="text-3xl">{successRate !== null ? `${successRate}%` : "-"}</CardTitle>

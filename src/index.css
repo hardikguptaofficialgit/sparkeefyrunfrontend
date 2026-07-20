@@ -32,6 +32,12 @@
     @apply border-border;
   }
 
+  html,
+  body,
+  #root {
+    @apply h-dvh;
+  }
+
   html {
     @apply antialiased;
     text-rendering: optimizeLegibility;
@@ -40,7 +46,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans text-[15px] leading-relaxed;
+    @apply overflow-hidden bg-background text-foreground font-sans text-[15px] leading-relaxed;
     font-feature-settings: "cv11", "ss01";
   }
 

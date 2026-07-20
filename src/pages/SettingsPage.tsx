@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { getUserId, setUserId, resetUserId } from "@/lib/auth";
+import { getUserId, setUserId, useDemoAccount, resetUserId } from "@/lib/auth";
 
 function BadgeInline({ children }: { children: React.ReactNode }) {
   return (
@@ -29,6 +29,12 @@ export function SettingsPage() {
     window.location.reload();
   };
 
+  const useDemo = () => {
+    useDemoAccount();
+    setLocalUserId("demo-user");
+    window.location.reload();
+  };
+
   const reset = () => {
     const newId = resetUserId();
     setLocalUserId(newId);
@@ -39,7 +45,7 @@ export function SettingsPage() {
     <div className="max-w-2xl">
       <PageHeader
         title="Settings"
-        description="Configure your session. Authentication uses a fake x-user-id header for development."
+        description="Your session ID isolates your data. Each browser gets a unique ID in production."
       />
 
       <div className="space-y-6">
@@ -62,8 +68,11 @@ export function SettingsPage() {
             </div>
             <div className="flex gap-3">
               <Button onClick={save}>{saved ? "Saved!" : "Save User ID"}</Button>
-              <Button variant="secondary" onClick={reset}>
+              <Button variant="secondary" onClick={useDemo}>
                 Use Demo Account
+              </Button>
+              <Button variant="ghost" onClick={reset}>
+                New Private ID
               </Button>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">
