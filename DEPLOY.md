@@ -1,6 +1,6 @@
 # Sparkeefy Frontend — Vercel Deploy
 
-Frontend-only repo. Backend runs on a **DigitalOcean Droplet** (separate repo).
+Frontend-only repo. Backend runs on **Cloudflare Workers** (recommended) or a DigitalOcean Droplet (separate repo).
 
 ---
 
@@ -43,7 +43,8 @@ frontend-repo/
 
 | Variable | Production value | Notes |
 |----------|------------------|-------|
-| `VITE_API_URL` | `https://api.yourdomain.com/v1` | Your Droplet API URL |
+| `VITE_API_URL` | `https://sparkeefy-wingman-api.<subdomain>.workers.dev/v1` | Cloudflare Worker (see backend `DEPLOY-CLOUDFLARE.md`) |
+| | `https://api.yourdomain.com/v1` | Or custom domain / Droplet URL |
 
 Apply to **Production**, **Preview**, and **Development** (use different backend URLs if needed).
 
