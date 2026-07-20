@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/brand/logo-heart.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sparkeefy AI Wingman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #app-splash {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #000;
+        gap: 18px;
+      }
+      #app-splash img.logo-heart {
+        width: 48px;
+        height: 48px;
+      }
+      #app-splash img.logo-text {
+        height: 22px;
+        width: auto;
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div id="app-splash" aria-label="Loading Sparkeefy">
+        <img class="logo-heart" src="/brand/logo-heart.png" alt="" width="56" height="56" />
+        <img class="logo-text" src="/brand/logo-text.svg" alt="Sparkeefy" />
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
